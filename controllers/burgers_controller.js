@@ -47,7 +47,7 @@ router.put("/api/burgers/:id", function(req, res) {
   
     console.log("condition", condition);
   
-    burger.updateOne('devoured = true', condition, function(result) {
+    burger.updateOne('grubbed = true', condition, function(result) {
       if (result.changedRows == 0) {
         // if no rows were changed, then the ID must not exist, so 404
         return res.status(404).end();

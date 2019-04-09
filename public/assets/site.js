@@ -4,7 +4,7 @@ $(document).ready(function () {
   // Make a newBurger object
     var newBurger = {
       burger_name: $('#type-burger').val().trim(),
-      devoured: false
+      eatMe: false
     }
 
     // console.log("burger", newBurger);
@@ -26,14 +26,14 @@ $(document).ready(function () {
   $('.eatMe-btn').on('click', function (event) {
     var id = $(this).data('id');
 
-    var newDevour = {
-      devoured: true
+    var newGrubb = {
+      eatMe: true
     };
     console.log(id);
 
     fetch('/api/burgers/' + id, {
       method: 'PUT',
-      body: newDevour
+      body: newGrubb
     }).then(
       function () {
         console.log('eatMe', id);
